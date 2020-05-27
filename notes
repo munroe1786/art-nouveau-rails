@@ -7,7 +7,7 @@ has_many :works
     :nationality - string
 
 
-Works
+Work
 belongs_to :artist
     :artist_id - integer
     :title - string
