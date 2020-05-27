@@ -1,0 +1,16 @@
+Artist
+has_many :works
+    :name - string
+    :date_of_birth - integer
+    :date_of_death - integer
+    :active_years - string
+    :nationality - string
+
+
+Works
+belongs_to :artist
+    :artist_id - integer
+    :title - string
+    :date - integer
+    :media - string
+    :description -string
