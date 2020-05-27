@@ -1,8 +1,8 @@
 class Api::V1::WorksController < ApplicationController
-    before_action :set_work, only: [:show, :update, :destroy]
+    before_action :set_artist
 
     def index
-        @works = Work.all
+        @works = @artist.works
         render json: @works
     end
 
@@ -27,8 +27,8 @@ class Api::V1::WorksController < ApplicationController
     
     private
 
-    def set_work
-        @work = work.find(params[:id])
+    def set_artist
+        @artist = Artist.find(params[:artist_id])
     end
 
     def work_params
