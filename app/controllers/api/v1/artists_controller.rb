@@ -1,11 +1,17 @@
 class Api::V1::ArtistsController < ApplicationController
 
     def index
-
+        @artists = Artist.all
+        render json: @artists
     end
 
     def create
-
+        @artist = Artist.new(artist_params)
+        if @artist.save
+            render json: @artist
+        else
+            render json: {error: 'Error creating artist'}
+        end
     end
 
     def show
