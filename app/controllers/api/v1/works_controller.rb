@@ -14,7 +14,7 @@ class Api::V1::WorksController < ApplicationController
     def create
         @work = @artist.works.new(work_params)
         if @work.save
-            render json: @work, status :created, location :@work
+            render json: @work
         else
             render json: {error: 'Work not created'}
         end
