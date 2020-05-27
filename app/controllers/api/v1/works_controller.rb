@@ -6,23 +6,17 @@ class Api::V1::WorksController < ApplicationController
         render json: @works
     end
 
-    def create
-        @work = Work.new(work_params)
-        if @work.save
-            render json: @work
-        else
-            render json: {error: 'Error creating work'}
-        end
-    end
-
     def show
-        @work = work.find(params[:id])
+        @work = Work.find(params[:id])
         render json: @work
     end
 
+    def create
+        
+    end
+
     def destroy
-        @work = work.find(params[:id])
-        @work.destroy
+        
     end
     
     private
