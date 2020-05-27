@@ -12,7 +12,12 @@ class Api::V1::WorksController < ApplicationController
     end
 
     def create
-        
+        @work = @artist.works.new(work_params)
+        if @work.save
+            render json: @work, status :created, location :@work
+        else
+            render json: {error: 'Work not created'}
+        end
     end
 
     def destroy
