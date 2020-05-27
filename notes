@@ -14,3 +14,5 @@ belongs_to :artist
     :date - integer
     :media - string
     :description -string
+
+in initializer - uncomment cors.rb and add * so we can make a fetch request from any origin--also added rack-cors gem
