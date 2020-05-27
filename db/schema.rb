@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_162247) do
 
   create_table "works", force: :cascade do |t|
     t.integer "artist_id"
+    t.string "image_url"
     t.string "title"
     t.integer "date"
     t.string "media"
