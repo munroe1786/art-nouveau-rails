@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_162247) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.integer "date_of_birth"
-    t.integer "date_of_death"
+    t.string "date_of_birth"
+    t.string "date_of_death"
     t.string "years_active"
     t.string "nationality"
     t.datetime "created_at", precision: 6, null: false
