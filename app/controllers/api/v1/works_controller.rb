@@ -2,7 +2,7 @@ class Api::V1::WorksController < ApplicationController
     before_action :set_artist
 
     def index
-        @works = @artist.works
+        @works = Work.all
         render json: @works
     end
 
@@ -14,7 +14,7 @@ class Api::V1::WorksController < ApplicationController
     def create
         @work = @artist.works.new(work_params)
         if @work.save
-            render json: @work
+            render json: @artist
         else
             render json: {error: 'Work not created'}
         end
