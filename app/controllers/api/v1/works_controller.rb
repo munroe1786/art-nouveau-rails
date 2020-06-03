@@ -21,7 +21,10 @@ class Api::V1::WorksController < ApplicationController
     end
 
     def destroy
-        
+       @work = Work.find(params["id"])
+       @artist = Artist.find(@work.artist_id)
+       @work.destroy
+       render json: @artist
     end
     
     private
