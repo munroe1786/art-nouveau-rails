@@ -24,6 +24,13 @@ class Api::V1::ArtistsController < ApplicationController
         @artist = Artist.find(params[:id])
         @artist.destroy
     end
+
+    def update
+        @artist = Artist.find(params[:id])
+        @artist.update(name: params["artist"]["name"], date_of_birth: params["artist"]["date_of_birth"], date_of_death: params["artist"]["date_of_death"], years_active: params["artist"]["years_active"], nationality: params["artist"]["nationality"])
+        @artist.save
+        render json: @artist
+    end
     
     private
 
